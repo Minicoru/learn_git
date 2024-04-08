@@ -1,4 +1,4 @@
-# Ejemplos de Git
+# Learn Git
 
 Este repositorio contiene ejemplos prácticos de comandos básicos de Git. Si eres nuevo en Git o necesitas repasar conceptos clave, este proyecto te ayudará a familiarizarte con las operaciones más comunes.
 
@@ -305,3 +305,110 @@ Actualizada 1 ruta desde el índice
 ```
 
 Esto el efecto que tuvo es que reinicio mi fichero README.md a la version antes de los cambios que realice para mostrar esta seccion, por lo que he tenido que escribir dos veces esta seccion como consecuencia del ejemplo
+
+
+## Alias en Git
+
+Podemos generar alias de los diferentes comandos que generemos para facilitar el uso de algunos como el ```log --graph --decorate --all --oneline```, lo cual es un comando largo y dificl de memorizar en momentos de fluidez al moverte desde el entorno en el que estas que puede ser programando y/o generando nuevas configuraciones, es posible construir el alias para el comando de la siguiente forma:
+
+```
+git config --global alias.tree "log --graph --decorate --all --oneline"
+```
+
+Ahora contamos con un alias para la palabra que le hemos indicado a Git, por lo cual para poder correr este comado ahora tendriamos que hacerlo de la siguiente forma:
+
+```
+git tree
+```
+
+### Resultado:
+
+```
+git config --global alias.tree "log --graph --decorate --all --oneline"
+git tree
+* d8dc099 (HEAD -> main, origin/main) Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+```
+
+Ahora siempre que llamemos a tree con Git, tendremos todos los parametros ingresados por defecto sin tener que ingresarlos completamente de nuevo.
+
+## Gitignore, carpetas y archivos para no tomar en cuenta
+
+Tal cual como indica esta seccion es considerable tomar en cuenta que una parte importante que tiene Git es que el archivo ```.gitignore``` al generarlo debemos ingresar y modiicarlo, para agregar todos los directorios y ficheros que no queremos que queden almacenados en la nueva version del proyecto, un ejemplo es cuando tenemos las librerias de ```NPM``` y estas no son necesarias dentro del Github.
+
+```
+touch .gitignore
+```
+
+Si se fijan el archivo gitignore por defecto viene vacio, debemos definir cuales son los ficheros que no deberiamos subir al repositorio, agregando un archivo ```fileToIgnore.txt``` al proyecto va a quedar desatendido cuando lo mencionemos en el ```.gitignore```, cabe mencionar que el punto adelante del nombre del archivo lo vuelve un archivo oculto.
+
+Dejo un ejemplo completo de lo realizado validado que el archivo esta ahora mismo pendiente de ser agregado con ```add```.
+
+### Ejemplo
+
+```
+
+git status
+En la rama main
+Tu rama está actualizada con 'origin/main'.
+
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     README.md
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.gitignore
+	fileToIgnore.txt
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+
+```
+
+Ahora agregamos al ```.gitignore``` el nombre del archivo.
+
+```
+fileToIgnore.txt
+```
+
+>Nota:
+>Tambien podemos agregar carpetas, por ejemplo las del modules de NPM
+
+Repetimos ahora el proceso con el comando y parametro de estado:
+
+```
+
+git status
+En la rama main
+Tu rama está actualizada con 'origin/main'.
+
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     README.md
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	.gitignore
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+
+```
+
+Lo que obtenemos es basicamente el ```.gitignore``` que acabamos de agregar los archivos modificados conocidos, pero ya no obtenemos el ```fileToIgnore.txt```; ya solo restaria agregar el archivo de configuracion para evitar que tengamos que mantenerlo afuera de las fotografias (distintos versionamientos).
+
+```
+git add .gitignore
+```
+
+Finalmente solo faltaria hacer el commit de la modificacion que agregar ahora nuestro archivo ```.gitignore```.
+

@@ -76,3 +76,16 @@ Despues de esto se ejecuta el siguiente comando para hacer el push de la rama lo
 
 >>```git branch -M main```
 
+## Generar una fotografia rapida del proyecto
+
+Para generar una fotografia hemos visto que los comandos que se deben utilizar son al menos tres, ```git add```, ```git commit -m``` y ```git push```, pero estos se pueden encadenar en la consola de comandos para generar la fotografia y varia por los separadores de los comandos encadenados.
+
+>MacOS
+
+```git add . && git commit -m "<comentario>" && git push```
+
+>Windows
+
+```git add . ;; git commit -m "<comentario>" ;; git push```
+
+

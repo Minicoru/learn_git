@@ -72,9 +72,9 @@ Despues de esto se ejecuta el siguiente comando para hacer el push de la rama lo
 
 ### Nota:
 
->Para este punto deberiamos tomar en cuenta que hicimos una conexion con una rama llamada main, para inicializar el proyecto debemos haber partido con una rama llamada ```Master```, sin embargo lo hemos cambiado por ```main``` y para hacer esto se puede hacer uso del siguiente comando:
+> Para este punto deberiamos tomar en cuenta que hicimos una conexion con una rama llamada main, para inicializar el proyecto debemos haber partido con una rama llamada ```Master```, sin embargo lo hemos cambiado por ```main``` y para hacer esto se puede hacer uso del siguiente comando:
 
->```git branch -M main```
+```git branch -M main```
 
 ## Generar una fotografia rapida del proyecto
 

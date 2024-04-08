@@ -12,9 +12,10 @@ Es necesario para poder comenzar a trabajar con Git configurar el nombre del usu
 
 Para esto es importante ejecutar el comando:
 
-```git config --global user.name "<Nombre_del_usuario>"```
-
-```git config --global user.email <Mail_usuario>```
+```
+git config --global user.name "<Nombre_del_usuario>"
+git config --global user.email <Mail_usuario>
+```
 
 ## Inicializar Repositorio
 

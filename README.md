@@ -101,6 +101,8 @@ git branch -M main
 
 Para generar una fotografia hemos visto que los comandos que se deben utilizar son al menos tres, ```git add```, ```git commit -m``` y ```git push```, pero estos se pueden encadenar en la consola de comandos para generar la fotografia y varia por los separadores de los comandos encadenados.
 
+### Ejemplos
+
 #### MacOS
 
 ```
@@ -113,3 +115,64 @@ git add . && git commit -m "<comentario>" && git push
 git add . ;; git commit -m "<comentario>" ;; git push
 ```
 
+## Estado de los cambios efectuados
+
+Tambien existe el parametro ```status``` que te indicara cuales son los ficheros modificados e insertados como nuevos al repositorio de tu proyecto actualmente durante la edicion de la instancia de tu proyecto, llamandose de la siguiente forma:
+
+```
+git status
+```
+
+## Historial de fotografias del repositorio
+
+Para obtener el historial de las fotografias (versionamiento del proyecto en ajustes), se llama a ```log``` y este lanzara un listado de los detalles, comentarios, fecha, hora y autor quien realizo las modificaciones al proyecto.
+
+```
+git log
+```
+
+Dejo un ejemplo de lo que obtengo yo al estar escribiendo y ajustando este ```README.md```
+
+```
+commit 6304e6478855aac1a6c1c2e6b329abc08379fa10 (HEAD -> main, origin/main)
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:34:05 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+
+commit 12f26c3dfa3b283a33f91f53c774ac3baca3f631
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:32:16 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+
+commit 948ae7b12e498a541a66297762bc64d90ede1e17
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:29:51 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+
+commit ae65eff584ba369bd142e87015e2036ef28a8720
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:28:29 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+
+commit 7fc8d350072386e3dfeaf492a5adbaeb810fa662
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:26:51 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+
+commit 71dfcdea1ef5572bf3d2ec70313855601b45aba3
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:24:48 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+
+commit f6a3b857dddc54e685cc43e3727088b56266df2b
+Author: Minicoru <miarg49@gmail.com>
+Date:   Mon Apr 8 00:20:24 2024 -0400
+
+    Ajustando el readme de este tutorial simple.
+```

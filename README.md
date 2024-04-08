@@ -115,12 +115,71 @@ git add . && git commit -m "<comentario>" && git push
 git add . ;; git commit -m "<comentario>" ;; git push
 ```
 
+### Ejemplo completo de lo que he realizado
+
+```
+git add .
+git commit -m "Primer commit"
+git branch -M main
+git remote add origin https://github.com/Minicoru/learn_git.git
+git push -u origin main
+
+[master (commit-raíz) cebb4e4] Primer commit
+ 1 file changed, 52 insertions(+)
+ create mode 100644 README.md
+Enumerando objetos: 3, listo.
+Contando objetos: 100% (3/3), listo.
+Compresión delta usando hasta 8 hilos
+Comprimiendo objetos: 100% (2/2), listo.
+Escribiendo objetos: 100% (3/3), 1.46 KiB | 1.46 MiB/s, listo.
+Total 3 (delta 0), reusados 0 (delta 0), pack-reusados 0
+To https://github.com/Minicoru/learn_git.git
+ * [new branch]      main -> main
+rama 'main' configurada para rastrear 'origin/main'.
+```
+
 ## Estado de los cambios efectuados
 
 Tambien existe el parametro ```status``` que te indicara cuales son los ficheros modificados e insertados como nuevos al repositorio de tu proyecto actualmente durante la edicion de la instancia de tu proyecto, llamandose de la siguiente forma:
 
 ```
 git status
+```
+
+### Ejemplo
+
+En el caso siguiente tengo ajustes sin agregar aun a un ```add``` por lo que tenemos el siguiente resultado:
+
+```
+En la rama main
+Tu rama está actualizada con 'origin/main'.
+
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     README.md
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+```
+
+Posteriormente hacemos un add:
+
+```
+git add README.md
+git status
+
+En la rama main
+Tu rama está actualizada con 'origin/main'.
+
+Cambios a ser confirmados:
+  (usa "git restore --staged <archivo>..." para sacar del área de stage)
+	modificados:     README.md
+
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     README.md
+
 ```
 
 ## Historial de fotografias del repositorio
@@ -176,3 +235,73 @@ Date:   Mon Apr 8 00:20:24 2024 -0400
 
     Ajustando el readme de este tutorial simple.
 ```
+
+### Parametros adicionales para ```log```
+
+- --graph
+```
+git log --graph
+* commit ec2d8a3b47a505d6b633975698d1c47ff4dfa2d1 (HEAD -> main, origin/main)
+| Author: Minicoru <miarg49@gmail.com>
+| Date:   Mon Apr 8 00:41:15 2024 -0400
+|
+|     Ajustando el readme de este tutorial simple.
+|
+* commit 6304e6478855aac1a6c1c2e6b329abc08379fa10
+| Author: Minicoru <miarg49@gmail.com>
+| Date:   Mon Apr 8 00:34:05 2024 -0400
+|
+|     Ajustando el readme de este tutorial simple.
+|
+* commit 12f26c3dfa3b283a33f91f53c774ac3baca3f631
+| Author: Minicoru <miarg49@gmail.com>
+| Date:   Mon Apr 8 00:32:16 2024 -0400
+|
+|     Ajustando el readme de este tutorial simple.
+|
+```
+
+- --graph --pretty=oneline
+```
+git log --graph --pretty=oneline
+* ec2d8a3b47a505d6b633975698d1c47ff4dfa2d1 (HEAD -> main, origin/main) Ajustando el readme de este tutorial simple.
+* 6304e6478855aac1a6c1c2e6b329abc08379fa10 Ajustando el readme de este tutorial simple.
+* 12f26c3dfa3b283a33f91f53c774ac3baca3f631 Ajustando el readme de este tutorial simple.
+* 948ae7b12e498a541a66297762bc64d90ede1e17 Ajustando el readme de este tutorial simple.
+* ae65eff584ba369bd142e87015e2036ef28a8720 Ajustando el readme de este tutorial simple.
+* 7fc8d350072386e3dfeaf492a5adbaeb810fa662 Ajustando el readme de este tutorial simple.
+* 71dfcdea1ef5572bf3d2ec70313855601b45aba3 Ajustando el readme de este tutorial simple.
+* f6a3b857dddc54e685cc43e3727088b56266df2b Ajustando el readme de este tutorial simple.
+* cebb4e4a7b4f84c84803163c5b4a1cd7b651a0bd Primer commit
+```
+
+- --graph --decorate --all --oneline
+```
+git log --graph --decorate --all --oneline
+* ec2d8a3 (HEAD -> main, origin/main) Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+```
+
+## Deshacer cambios de la version actualmente en edicion
+
+Para deshacer los ajustes a un fichero se puede usar el parametro ```checkout```, el cual especificando el fichero tendra el objetivo de volver a la version base de esta fotografia actual.
+
+```
+git checkout README.md
+```
+
+### Resultado
+
+```
+git checkout README.md
+Actualizada 1 ruta desde el índice
+```
+
+Esto el efecto que tuvo es que reinicio mi fichero README.md a la version antes de los cambios que realice para mostrar esta seccion, por lo que he tenido que escribir dos veces esta seccion como consecuencia del ejemplo

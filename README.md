@@ -501,4 +501,53 @@ index 2826fbc..dde7e27 100644
 \ No newline at end of file
 ```
 
-test de reset
+## Reiniciando a una version anterior
+
+Podemos volver a version anterior en la que algunos cambios eran mas favorables antes de cometer algun error o querer recuperar algunos de los archivos originalmente a su estado anterior.
+
+Con el parametro reset lo podemos hacer:
+
+```
+git tree
+* 5b7dc72 (HEAD -> main, origin/main) Agregando la seccion de Diff con ejemplo.
+* c436cf3 Agregando la seccion de Diff con ejemplo.
+* 8ab966f Ajustando el readme de este tutorial simple.
+* d8dc099 Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+
+git reset c436cf3
+Cambios fuera del área de stage tras el reset:
+M	README.md
+M	filteToDiffTest.html
+```
+
+Hacemos un checkout de los ficheros modificados:
+
+```
+git checkout README.md
+Actualizada 1 ruta desde el índice
+git checkout filteToDiffTest.html
+Actualizada 1 ruta desde el índice
+```
+
+Finalmente podemos devolver la rama al commit seleccionado c436cf3 de forma forzosa eso si.
+
+```
+git push -f
+Total 0 (delta 0), reusados 0 (delta 0), pack-reusados 0
+To https://github.com/Minicoru/learn_git.git
+ + 5b7dc72...c436cf3 main -> main (forced update)
+
+ ```
+
+ Una vez realizada esta accion el repositorio estara marcado con la version de la fotografia del proyecto seleccionada.
+
+ 

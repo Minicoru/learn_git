@@ -306,6 +306,34 @@ Actualizada 1 ruta desde el índice
 
 Esto el efecto que tuvo es que reinicio mi fichero README.md a la version antes de los cambios que realice para mostrar esta seccion, por lo que he tenido que escribir dos veces esta seccion como consecuencia del ejemplo
 
+## Volver de la version actual a una pasada
+
+Para volver a tener los ajustes de un estado anterior de ajustes se puede usar el parametro ```checkout```, el cual especificando el identificador de una commit tendra el objetivo de volver a la version base de esa fotografia pasada.
+
+```
+git tree
+* d679e0d (HEAD -> main, origin/main) Agregando la seccion nota para DS_STORE.
+* 493e6be Agregando la seccion de Reset con ejemplo.
+* cb009ad Agregando la seccion de Diff con ejemplo.
+* ca83caf Agregando la seccion de Diff con ejemplo.
+* 362c9f8 Agregando la seccion de Diff con ejemplo.
+* c436cf3 Agregando la seccion de Diff con ejemplo.
+* 8ab966f Ajustando el readme de este tutorial simple.
+* d8dc099 Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+
+git checkout 8ab966f
+```
+
+
 
 ## Alias en Git
 
@@ -561,4 +589,6 @@ To https://github.com/Minicoru/learn_git.git
  > Nota:
  > Los repositorios a los que se les hace este proceso pierden las versiones que vienen posterior a la version seleccionada.
 
- 
+
+## Desplazamiento (Ramas)
+

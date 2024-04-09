@@ -550,4 +550,7 @@ To https://github.com/Minicoru/learn_git.git
 
  Una vez realizada esta accion el repositorio estara marcado con la version de la fotografia del proyecto seleccionada.
 
- 
+ > Nota:
+ > Los repositorios a los que se les hace este proceso pierden las versiones que vienen posterior a la version seleccionada.
+
+

@@ -412,3 +412,93 @@ git add .gitignore
 
 Finalmente solo faltaria hacer el commit de la modificacion que agregar ahora nuestro archivo ```.gitignore```.
 
+
+## Diferencias con ```diff```
+
+Podemos visualizar las diferencias que tenemos con el progreso de las modificaciones que vamos realizando con ```Git```, para lo cual podemos llamar a:
+
+```
+git diff
+diff --git a/README.md b/README.md
+index 2c82cb0..d5efac7 100644
+--- a/README.md
++++ b/README.md
+@@ -412,3 +412,13 @@ git add .gitignore
+
+ Finalmente solo faltaria hacer el commit de la modificacion que agregar ahora nuestro archivo ```.gitignore```.
+
++
++## Diferencias con ```diff```
++
++Podemos visualizar las diferencias que tenemos con el progreso de las modificaciones que vamos realizando con ```Git```, para lo cual podemos llamar a:
++
++```
++git diff
++
++
++```
+\ No newline at end of file
+```
+
+Teniemdo el resultado que podemos dejar atras, agregamos otro documento de prueba...
+
+```
+git diff
+diff --git a/README.md b/README.md
+index 2c82cb0..d957a97 100644
+--- a/README.md
++++ b/README.md
+@@ -412,3 +412,33 @@ git add .gitignore
+
+ Finalmente solo faltaria hacer el commit de la modificacion que agregar ahora nuestro archivo ```.gitignore```.
+
++
++## Diferencias con ```diff```
++
++Podemos visualizar las diferencias que tenemos con el progreso de las modificaciones que vamos realizando con ```Git```, para lo cual podemos llamar a:
++
++```
++git diff
++diff --git a/README.md b/README.md
++index 2c82cb0..d5efac7 100644
++--- a/README.md
+++++ b/README.md
++@@ -412,3 +412,13 @@ git add .gitignore
++
++ Finalmente solo faltaria hacer el commit de la modificacion que agregar ahora nuestro archivo ```.gitignore```.
++
+++
+++## Diferencias con ```diff```
+++
+++Podemos visualizar las diferencias que tenemos con el progreso de las modificaciones que vamos realizando con ```Git```, para lo cual podemos llamar a:
+++
+++```
+++git diff
+++
+++
+++```
++\ No newline at end of file
++```
++
++Teniemdo el resultado que podemos dejar atras, agregamos otro documento de prueba...
++
+diff --git a/filteToDiffTest.html b/filteToDiffTest.html
+index 2826fbc..dde7e27 100644
+--- a/filteToDiffTest.html
++++ b/filteToDiffTest.html
+@@ -3,9 +3,9 @@
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-   <title></title>
++   <title>HTML file for DIFF test</title>
+ </head>
+ <body>
+-
++   <P>HTML file for DIFF test</P>
+ </body>
+ </html>
+\ No newline at end of file
+```
+
+test de reset

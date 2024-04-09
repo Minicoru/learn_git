@@ -553,4 +553,4 @@ To https://github.com/Minicoru/learn_git.git
  > Nota:
  > Los repositorios a los que se les hace este proceso pierden las versiones que vienen posterior a la version seleccionada.
 
-
+ 

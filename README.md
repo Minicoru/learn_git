@@ -380,8 +380,16 @@ Ahora agregamos al ```.gitignore``` el nombre del archivo.
 fileToIgnore.txt
 ```
 
->Nota:
->Tambien podemos agregar carpetas, por ejemplo las del modules de NPM
+> Nota:
+> Tambien podemos agregar carpetas, por ejemplo las del modules de NPM.
+> Por ejemplo el archivo oculto de MacOS que aparece en cada directorio del sistema, por lo cual es importante mencionar que no es un archivo propio de tu proyecto o repositorio.
+
+```
+fileToIgnore.txt
+**/.DS_STORE
+```
+
+> Los astericos (**) señalan que no importe en que directorio se encuentre no lo tome en cuenta. 
 
 Repetimos ahora el proceso con el comando y parametro de estado:
 

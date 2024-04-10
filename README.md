@@ -590,5 +590,103 @@ To https://github.com/Minicoru/learn_git.git
  > Los repositorios a los que se les hace este proceso pierden las versiones que vienen posterior a la version seleccionada.
 
 
+### Parametro ```--hard``` para reset
+
+Tambien podemos utilizar el parametro hard para poder hacer los movimientos de una version de la fotografia del proyecto a otra.
+
+```
+git tree
+* 795068d (HEAD, origin/main, main) Agregando la seccion nota para DS_STORE.
+* d679e0d Agregando la seccion nota para DS_STORE.
+* 493e6be Agregando la seccion de Reset con ejemplo.
+* cb009ad Agregando la seccion de Diff con ejemplo.
+* ca83caf Agregando la seccion de Diff con ejemplo.
+* 362c9f8 Agregando la seccion de Diff con ejemplo.
+* c436cf3 Agregando la seccion de Diff con ejemplo.
+* 8ab966f Ajustando el readme de este tutorial simple.
+* d8dc099 Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+
+git reset --hard d679e0d
+HEAD está ahora en d679e0d Agregando la seccion nota para DS_STORE.
+
+git tree
+* 795068d (origin/main, main) Agregando la seccion nota para DS_STORE.
+* d679e0d (HEAD) Agregando la seccion nota para DS_STORE.
+* 493e6be Agregando la seccion de Reset con ejemplo.
+* cb009ad Agregando la seccion de Diff con ejemplo.
+* ca83caf Agregando la seccion de Diff con ejemplo.
+* 362c9f8 Agregando la seccion de Diff con ejemplo.
+* c436cf3 Agregando la seccion de Diff con ejemplo.
+* 8ab966f Ajustando el readme de este tutorial simple.
+* d8dc099 Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+```
+
+Con esto ya nos movimos a la version objetivo, en este punto ya solo resta hacer los ajustes o mejoras respectivos y partir desde este punto.
+
+
 ## Desplazamiento (Ramas)
+
+En Git se utilizan las Ramas como segmentos para hacer ajustes puntuales y hacer trabajo en conjunto con otros desarrolladores, generando la posibilidad de modificar de forma simultanea un proyecto y posteriormente unir todas las partes del trabajo colaborativo.
+
+Por ejemplo generamos una rama nueva:
+
+```
+git branch mr/testnewbranch
+git checkout mr/testnewbranch
+Cambiado a rama 'mr/testnewbranch'
+```
+
+Con esto ultimo hemos generado una rama local en el sistema del usuario y solo faltaria deployar a la version definitiva, es necesario hacer un ```push``` para poder establecer la rama en el repositorio en el lado de la plataforma de las versiones.
+
+
+## Tags (etiquetas)
+
+Con el parametro ```tag``` se pueden etiquetar las fotografias para hacer simple el proceso de versionamiento para los ```git reset``` aplicados.
+
+Por ejemplo:
+
+```
+git tag gentag001
+git tree
+* 795068d (HEAD -> main, tag: gentag001, origin/main, mr/testnewbranch) Agregando la seccion nota para DS_STORE.
+* d679e0d Agregando la seccion nota para DS_STORE.
+* 493e6be Agregando la seccion de Reset con ejemplo.
+* cb009ad Agregando la seccion de Diff con ejemplo.
+* ca83caf Agregando la seccion de Diff con ejemplo.
+* 362c9f8 Agregando la seccion de Diff con ejemplo.
+* c436cf3 Agregando la seccion de Diff con ejemplo.
+* 8ab966f Ajustando el readme de este tutorial simple.
+* d8dc099 Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+```
+
+Como se puede ver en el ```git tree```, tenemos ahora una version etiquetada de la fotografia del proyecto, por lo cual es mas simple volver a esa version especifica ahora mismo.
+
+
 

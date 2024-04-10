@@ -726,3 +726,8 @@ git tree
 ```
 
 Como se puede ver en el ```git tree```, tenemos ahora una version etiquetada de la fotografia del proyecto, por lo cual es mas simple volver a esa version especifica ahora mismo.
+
+
+
+## Merge o Mezclar Ramas.
+

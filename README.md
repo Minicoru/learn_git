@@ -656,6 +656,45 @@ Cambiado a rama 'mr/testnewbranch'
 
 Con esto ultimo hemos generado una rama local en el sistema del usuario y solo faltaria deployar a la version definitiva, es necesario hacer un ```push``` para poder establecer la rama en el repositorio en el lado de la plataforma de las versiones.
 
+## Switch (cambiando ramas)
+
+Al usar nuevas ramas, tambien podemos hacer un cambio de rama de una a otra usando ```switch``` con el nombre de la rama.
+
+```
+git switch mr/testnewbranch
+```
+
+O
+
+```
+git switch mr/newSectionBranchSwitch
+```
+
+Finalmente para validar que hemos realizado el cambio podemos hacer un ```git tree``` y obtenemos el nombre de la rama recien creada y ya nuestro HEAD apunta a esta con origin/main,main.
+
+```
+* dd40401 (HEAD -> mr/newSectionBranchSwitch, origin/main, main) Agregando la seccion nota hard reset de git
+* 795068d (tag: gentag001, mr/testnewbranch) Agregando la seccion nota para DS_STORE.
+* d679e0d Agregando la seccion nota para DS_STORE.
+* 493e6be Agregando la seccion de Reset con ejemplo.
+* cb009ad Agregando la seccion de Diff con ejemplo.
+* ca83caf Agregando la seccion de Diff con ejemplo.
+* 362c9f8 Agregando la seccion de Diff con ejemplo.
+* c436cf3 Agregando la seccion de Diff con ejemplo.
+* 8ab966f Ajustando el readme de este tutorial simple.
+* d8dc099 Ajustando el readme de este tutorial simple.
+* ec2d8a3 Ajustando el readme de este tutorial simple.
+* 6304e64 Ajustando el readme de este tutorial simple.
+* 12f26c3 Ajustando el readme de este tutorial simple.
+* 948ae7b Ajustando el readme de este tutorial simple.
+* ae65eff Ajustando el readme de este tutorial simple.
+* 7fc8d35 Ajustando el readme de este tutorial simple.
+* 71dfcde Ajustando el readme de este tutorial simple.
+* f6a3b85 Ajustando el readme de este tutorial simple.
+* cebb4e4 Primer commit
+```
+
+
 
 ## Tags (etiquetas)
 
@@ -687,6 +726,3 @@ git tree
 ```
 
 Como se puede ver en el ```git tree```, tenemos ahora una version etiquetada de la fotografia del proyecto, por lo cual es mas simple volver a esa version especifica ahora mismo.
-
-
-

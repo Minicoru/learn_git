@@ -690,3 +690,5 @@ Como se puede ver en el ```git tree```, tenemos ahora una version etiquetada de 
 
 
 
+## Merge o Mezclar Ramas.
+
